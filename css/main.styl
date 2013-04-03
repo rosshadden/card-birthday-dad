@@ -1,0 +1,208 @@
+@import 'nib'
+@import 'head'
+
+body{
+	background: #696;
+	color: #666;
+	font-family: Futura, Helvetica, Sans-serif;
+	text-align: center;
+	perspective: 1000;
+}
+
+header{
+	color: black;
+	text-align: center;
+}
+
+#content figure{
+	cursor: move;
+}
+
+/*#cake{
+	width: 372px;
+	height: 342px;
+	background: url(../img/cake.jpg);
+}*/
+
+
+
+
+
+#envelope{
+	position: relative;
+	width: 600px;
+	height: 400px;
+	margin: 350px auto 0 auto;
+}
+
+#envelope_front{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 400px;
+	z-index: 1; /* This seems required for Chrome */
+	background: #FFF url('../img/card.png') 0px 0px;
+	cursor: pointer;
+	transition: all 2s ease-in-out;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transform: rotateY(0deg) translateZ(10px);
+}
+
+#envelope_front.flipped{
+	transform: rotateY(-180deg);
+}
+
+#envelope_back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 400px;
+	background: #FFF url('../img/card.png') -600px -400px;
+	transition: all 2s ease-in-out;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transform: rotateY(180deg) translateZ(3px);
+}
+
+#envelope_back.flipped{
+	transform: rotateY(0deg);
+}
+
+#flap_outside{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 200px;
+	background: transparent url('../img/card.png') -600px -200px;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transform-origin: 0 0;
+	transform: rotateX(0) translateZ(3px);
+}
+
+#flap_outside.open{
+	transform: rotateX(180deg) translateZ(0);
+}
+
+#flap_inside{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 200px;
+	background: transparent url('../img/card.png') -600px 0px;
+	transition: all 0.5s ease-in-out;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transform-origin: 0 0;
+	transform: rotateX(-180deg) translateY(-200px) translateZ(3px);
+}
+
+#flap_inside.open{
+	transform: rotateX(0deg) translateY(-200px) translateZ(0);
+}
+
+#envelope_back_outside{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 400px;
+	cursor: pointer;
+	background: transparent url('../img/card.png') 0px -400px;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transform: translateZ(2px);
+}
+
+#card{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 580px;
+	height: 380px;
+	transform-style: preserve-3d;
+	transform: translateZ(1px);
+}
+
+#card.removed{
+	animation-name: remove-card;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-delay: 0;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+#card_outside_front{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #FFF url('../img/card.png') -1800px 0px;
+	cursor: pointer;
+	transition: all 1s ease-in-out;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transform-origin: 0 0;
+	transform: rotateX(0deg) translateZ(0px);
+}
+
+#card_outside_front.open{
+	transform: rotateX(180deg);
+}
+
+#card_inside_top{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #FFF url('../img/card.png') -1210px -10px;
+	transition: all 1s ease-in-out;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transform-origin: 0 380px;
+	/* 379 is used instead of 380 to prevent any gap between the two layers (visible in Safari) */
+	transform: translateZ(0px) translateY(-379px) rotateX(-180deg);
+}
+
+#card_inside_top.open{
+	transform: translateZ(0px) translateY(-379px) rotateX(0deg);
+}
+
+#card_inside_bottom{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1; /* Hide behind #card_outside_front and #card_inside_top */
+	background: #FFF url('../img/card.png') -1210px 390px;
+}
+
+/* Animation Keyframes for removing the card */
+@keyframes remove-card {
+
+	0% {
+		transform: translateY(0px) translateZ(1px);
+	}
+
+	33% {
+		transform: translateY(-400px) translateZ(1px);
+	}
+
+	67% {
+		transform: translateY(-400px) translateZ(3px);
+	}
+
+	100% {
+		transform: translateY(0px) translateZ(3px);
+	}
+
+}
+
+@import 'foot'

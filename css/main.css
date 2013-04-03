@@ -1,496 +1,664 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
 html,
 button,
 input,
 select,
 textarea {
-	color: #222;
+  color: #222;
 }
-
 body {
-	font-size: 1em;
-	line-height: 1.4;
+  font-size: 1em;
+  line-height: 1.4;
 }
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
 ::-moz-selection {
-	background: #b3d4fc;
-	text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
-
 ::selection {
-	background: #b3d4fc;
-	text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
-
-/*
- * A better looking default horizontal rule
- */
-
 hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 1em 0;
-	padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-
 img {
-	vertical-align: middle;
+  vertical-align: middle;
 }
-
-/*
- * Remove default fieldset styles.
- */
-
 fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
 textarea {
-	resize: vertical;
+  resize: vertical;
 }
-
-/* ==========================================================================
-   Chrome Frame prompt
-   ========================================================================== */
-
 .chromeframe {
-	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
-	padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-body{
-	background: #696;
-	color: #666;
-	font-family: Futura, Helvetica, Sans-serif;
-	text-align: center;
-	-webkit-perspective: 1000;
+body {
+  background: #696;
+  color: #666;
+  font-family: Futura, Helvetica, Sans-serif;
+  text-align: center;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
 }
-
-header{
-	color: black;
-	text-align: center;
+header {
+  color: #000;
+  text-align: center;
 }
-
-#content figure{
-	cursor: move;
+#content figure {
+  cursor: move;
 }
-
 /*#cake{
 	width: 372px;
 	height: 342px;
 	background: url(../img/cake.jpg);
 }*/
-
-
-
-
-
-#envelope{
-	position: relative;
-	width: 600px;
-	height: 400px;
-	margin: 350px auto 0 auto;
+#envelope {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 350px auto 0 auto;
 }
-
-#envelope_front{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 600px;
-	height: 400px;
-	z-index: 1; /* This seems required for Chrome */
-	background: #FFF url('../img/card.png') 0px 0px;
-	cursor: pointer;
-	-webkit-transition: all 2s ease-in-out;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform: rotateY(0deg) translateZ(10px);
+#envelope_front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 400px;
+  z-index: 1;
+/* This seems required for Chrome */
+  background: #fff url("../img/card.png") 0px 0px;
+  cursor: pointer;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg) translateZ(10px);
+  -moz-transform: rotateY(0deg) translateZ(10px);
+  -o-transform: rotateY(0deg) translateZ(10px);
+  -ms-transform: rotateY(0deg) translateZ(10px);
+  transform: rotateY(0deg) translateZ(10px);
 }
-
-#envelope_front.flipped{
-	-webkit-transform: rotateY(-180deg);
+#envelope_front.flipped {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
-
-#envelope_back{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 600px;
-	height: 400px;
-	background: #FFF url('../img/card.png') -600px -400px;
-	-webkit-transition: all 2s ease-in-out;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform: rotateY(180deg) translateZ(3px);
+#envelope_back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 400px;
+  background: #fff url("../img/card.png") -600px -400px;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg) translateZ(3px);
+  -moz-transform: rotateY(180deg) translateZ(3px);
+  -o-transform: rotateY(180deg) translateZ(3px);
+  -ms-transform: rotateY(180deg) translateZ(3px);
+  transform: rotateY(180deg) translateZ(3px);
 }
-
-#envelope_back.flipped{
-	-webkit-transform: rotateY(0deg);
+#envelope_back.flipped {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
-
-#flap_outside{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 600px;
-	height: 200px;
-	background: transparent url('../img/card.png') -600px -200px;
-	cursor: pointer;
-	-webkit-transition: all 0.5s ease-in-out;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform-origin: 0 0;
-	-webkit-transform: rotateX(0) translateZ(3px);
+#flap_outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 200px;
+  background: transparent url("../img/card.png") -600px -200px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotateX(0) translateZ(3px);
+  -moz-transform: rotateX(0) translateZ(3px);
+  -o-transform: rotateX(0) translateZ(3px);
+  -ms-transform: rotateX(0) translateZ(3px);
+  transform: rotateX(0) translateZ(3px);
 }
-
-#flap_outside.open{
-	-webkit-transform: rotateX(180deg) translateZ(0);
+#flap_outside.open {
+  -webkit-transform: rotateX(180deg) translateZ(0);
+  -moz-transform: rotateX(180deg) translateZ(0);
+  -o-transform: rotateX(180deg) translateZ(0);
+  -ms-transform: rotateX(180deg) translateZ(0);
+  transform: rotateX(180deg) translateZ(0);
 }
-
-#flap_inside{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 600px;
-	height: 200px;
-	background: transparent url('../img/card.png') -600px 0px;
-	-webkit-transition: all 0.5s ease-in-out;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform-origin: 0 0;
-	-webkit-transform: rotateX(-180deg) translateY(-200px) translateZ(3px);
+#flap_inside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 200px;
+  background: transparent url("../img/card.png") -600px 0px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotateX(-180deg) translateY(-200px) translateZ(3px);
+  -moz-transform: rotateX(-180deg) translateY(-200px) translateZ(3px);
+  -o-transform: rotateX(-180deg) translateY(-200px) translateZ(3px);
+  -ms-transform: rotateX(-180deg) translateY(-200px) translateZ(3px);
+  transform: rotateX(-180deg) translateY(-200px) translateZ(3px);
 }
-
-#flap_inside.open{
-	-webkit-transform: rotateX(0deg) translateY(-200px) translateZ(0);
+#flap_inside.open {
+  -webkit-transform: rotateX(0deg) translateY(-200px) translateZ(0);
+  -moz-transform: rotateX(0deg) translateY(-200px) translateZ(0);
+  -o-transform: rotateX(0deg) translateY(-200px) translateZ(0);
+  -ms-transform: rotateX(0deg) translateY(-200px) translateZ(0);
+  transform: rotateX(0deg) translateY(-200px) translateZ(0);
 }
-
-#envelope_back_outside{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 600px;
-	height: 400px;
-	cursor: pointer;
-	background: transparent url('../img/card.png') 0px -400px;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform: translateZ(2px);
+#envelope_back_outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 400px;
+  cursor: pointer;
+  background: transparent url("../img/card.png") 0px -400px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(2px);
+  -moz-transform: translateZ(2px);
+  -o-transform: translateZ(2px);
+  -ms-transform: translateZ(2px);
+  transform: translateZ(2px);
 }
-
-#card{
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	width: 580px;
-	height: 380px;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform: translateZ(1px);
+#card {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 580px;
+  height: 380px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  transform: translateZ(1px);
 }
-
-#card.removed{
-	-webkit-animation-name: remove-card;
-	-webkit-animation-duration: 1.5s;
-	-webkit-animation-timing-function: ease;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-direction: normal;
-	-webkit-animation-delay: 0;
-	-webkit-animation-play-state: running;
-	-webkit-animation-fill-mode: forwards;
+#card.removed {
+  -webkit-animation-name: remove-card;
+  -moz-animation-name: remove-card;
+  -o-animation-name: remove-card;
+  -ms-animation-name: remove-card;
+  animation-name: remove-card;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -o-animation-duration: 1.5s;
+  -ms-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+  -o-animation-direction: normal;
+  -ms-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay: 0;
+  -ms-animation-delay: 0;
+  animation-delay: 0;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -o-animation-play-state: running;
+  -ms-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
-
-#card_outside_front{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #FFF url('../img/card.png') -1800px 0px;
-	cursor: pointer;
-	-webkit-transition: all 1s ease-in-out;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform-origin: 0 0;
-	-webkit-transform: rotateX(0deg) translateZ(0px);
+#card_outside_front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff url("../img/card.png") -1800px 0px;
+  cursor: pointer;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotateX(0deg) translateZ(0px);
+  -moz-transform: rotateX(0deg) translateZ(0px);
+  -o-transform: rotateX(0deg) translateZ(0px);
+  -ms-transform: rotateX(0deg) translateZ(0px);
+  transform: rotateX(0deg) translateZ(0px);
 }
-
-#card_outside_front.open{
-	-webkit-transform: rotateX(180deg);
+#card_outside_front.open {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
-
-#card_inside_top{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	background: #FFF url('../img/card.png') -1210px -10px;
-	-webkit-transition: all 1s ease-in-out;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform-origin: 0 380px;
-	/* 379 is used instead of 380 to prevent any gap between the two layers (visible in Safari) */
-	-webkit-transform: translateZ(0px) translateY(-379px) rotateX(-180deg);
+#card_inside_top {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff url("../img/card.png") -1210px -10px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0 380px;
+  -moz-transform-origin: 0 380px;
+  -o-transform-origin: 0 380px;
+  -ms-transform-origin: 0 380px;
+  transform-origin: 0 380px;
+/* 379 is used instead of 380 to prevent any gap between the two layers (visible in Safari) */
+  -webkit-transform: translateZ(0px) translateY(-379px) rotateX(-180deg);
+  -moz-transform: translateZ(0px) translateY(-379px) rotateX(-180deg);
+  -o-transform: translateZ(0px) translateY(-379px) rotateX(-180deg);
+  -ms-transform: translateZ(0px) translateY(-379px) rotateX(-180deg);
+  transform: translateZ(0px) translateY(-379px) rotateX(-180deg);
 }
-
-#card_inside_top.open{
-	-webkit-transform: translateZ(0px) translateY(-379px) rotateX(0deg);
+#card_inside_top.open {
+  -webkit-transform: translateZ(0px) translateY(-379px) rotateX(0deg);
+  -moz-transform: translateZ(0px) translateY(-379px) rotateX(0deg);
+  -o-transform: translateZ(0px) translateY(-379px) rotateX(0deg);
+  -ms-transform: translateZ(0px) translateY(-379px) rotateX(0deg);
+  transform: translateZ(0px) translateY(-379px) rotateX(0deg);
 }
-
-#card_inside_bottom{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	z-index: -1; /* Hide behind #card_outside_front and #card_inside_top */
-	background: #FFF url('../img/card.png') -1210px 390px;
+#card_inside_bottom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+/* Hide behind #card_outside_front and #card_inside_top */
+  background: #fff url("../img/card.png") -1210px 390px;
 }
-
 /* Animation Keyframes for removing the card */
-@-webkit-keyframes remove-card {
-
-	0% {
-		-webkit-transform: translateY(0px) translateZ(1px);
-	}
-
-	33% {
-		-webkit-transform: translateY(-400px) translateZ(1px);
-	}
-
-	67% {
-		-webkit-transform: translateY(-400px) translateZ(3px);
-	}
-
-	100% {
-		-webkit-transform: translateY(0px) translateZ(3px);
-	}
-
-}
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Image replacement
- */
-
 .ir {
-	background-color: transparent;
-	border: 0;
-	overflow: hidden;
-	/* IE 6/7 fallback */
-	*text-indent: -9999px;
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+/* IE 6/7 fallback */
+  *text-indent: -9999px;
 }
-
 .ir:before {
-	content: "";
-	display: block;
-	width: 0;
-	height: 150%;
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
 }
-
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
 .hidden {
-	display: none !important;
-	visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
 .visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
-
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-	clip: auto;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	position: static;
-	width: auto;
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
 }
-
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
 .invisible {
-	visibility: hidden;
+  visibility: hidden;
 }
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
 .clearfix:before,
 .clearfix:after {
-	content: " "; /* 1 */
-	display: table; /* 2 */
+  content: " ";
+/* 1 */
+  display: table;
+/* 2 */
 }
-
 .clearfix:after {
-	clear: both;
+  clear: both;
 }
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
 .clearfix {
-	*zoom: 1;
+  *zoom: 1;
 }
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
 @media only screen and (min-width: 35em) {
-	/* Style adjustments for viewports that meet the condition */
 }
-
-@media print,
-	   (-o-min-device-pixel-ratio: 5/4),
-	   (-webkit-min-device-pixel-ratio: 1.25),
-	   (min-resolution: 120dpi) {
-	/* Style adjustments for high resolution devices */
+@media print,(-o-min-device-pixel-ratio: 5/4),(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 120dpi) {
 }
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-
 @media print {
-	* {
-		background: transparent !important;
-		color: #000 !important; /* Black prints faster: h5bp.com/s */
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
+  * {
+    background: transparent !important;
+    color: #000 !important;
+/* Black prints faster: h5bp.com/s */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+/* h5bp.com/t */
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+@-moz-keyframes remove-card {
+  0% {
+    -webkit-transform: translateY(0px) translateZ(1px);
+    -moz-transform: translateY(0px) translateZ(1px);
+    -o-transform: translateY(0px) translateZ(1px);
+    -ms-transform: translateY(0px) translateZ(1px);
+    transform: translateY(0px) translateZ(1px);
+  }
 
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
+  33% {
+    -webkit-transform: translateY(-400px) translateZ(1px);
+    -moz-transform: translateY(-400px) translateZ(1px);
+    -o-transform: translateY(-400px) translateZ(1px);
+    -ms-transform: translateY(-400px) translateZ(1px);
+    transform: translateY(-400px) translateZ(1px);
+  }
 
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
+  67% {
+    -webkit-transform: translateY(-400px) translateZ(3px);
+    -moz-transform: translateY(-400px) translateZ(3px);
+    -o-transform: translateY(-400px) translateZ(3px);
+    -ms-transform: translateY(-400px) translateZ(3px);
+    transform: translateY(-400px) translateZ(3px);
+  }
 
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
+  100% {
+    -webkit-transform: translateY(0px) translateZ(3px);
+    -moz-transform: translateY(0px) translateZ(3px);
+    -o-transform: translateY(0px) translateZ(3px);
+    -ms-transform: translateY(0px) translateZ(3px);
+    transform: translateY(0px) translateZ(3px);
+  }
+}
+@-webkit-keyframes remove-card {
+  0% {
+    -webkit-transform: translateY(0px) translateZ(1px);
+    -moz-transform: translateY(0px) translateZ(1px);
+    -o-transform: translateY(0px) translateZ(1px);
+    -ms-transform: translateY(0px) translateZ(1px);
+    transform: translateY(0px) translateZ(1px);
+  }
 
-	/*
-	 * Don't show links for images, or javascript/internal links
-	 */
+  33% {
+    -webkit-transform: translateY(-400px) translateZ(1px);
+    -moz-transform: translateY(-400px) translateZ(1px);
+    -o-transform: translateY(-400px) translateZ(1px);
+    -ms-transform: translateY(-400px) translateZ(1px);
+    transform: translateY(-400px) translateZ(1px);
+  }
 
-	.ir a:after,
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after {
-		content: "";
-	}
+  67% {
+    -webkit-transform: translateY(-400px) translateZ(3px);
+    -moz-transform: translateY(-400px) translateZ(3px);
+    -o-transform: translateY(-400px) translateZ(3px);
+    -ms-transform: translateY(-400px) translateZ(3px);
+    transform: translateY(-400px) translateZ(3px);
+  }
 
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
+  100% {
+    -webkit-transform: translateY(0px) translateZ(3px);
+    -moz-transform: translateY(0px) translateZ(3px);
+    -o-transform: translateY(0px) translateZ(3px);
+    -ms-transform: translateY(0px) translateZ(3px);
+    transform: translateY(0px) translateZ(3px);
+  }
+}
+@-o-keyframes remove-card {
+  0% {
+    -webkit-transform: translateY(0px) translateZ(1px);
+    -moz-transform: translateY(0px) translateZ(1px);
+    -o-transform: translateY(0px) translateZ(1px);
+    -ms-transform: translateY(0px) translateZ(1px);
+    transform: translateY(0px) translateZ(1px);
+  }
 
-	thead {
-		display: table-header-group; /* h5bp.com/t */
-	}
+  33% {
+    -webkit-transform: translateY(-400px) translateZ(1px);
+    -moz-transform: translateY(-400px) translateZ(1px);
+    -o-transform: translateY(-400px) translateZ(1px);
+    -ms-transform: translateY(-400px) translateZ(1px);
+    transform: translateY(-400px) translateZ(1px);
+  }
 
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
+  67% {
+    -webkit-transform: translateY(-400px) translateZ(3px);
+    -moz-transform: translateY(-400px) translateZ(3px);
+    -o-transform: translateY(-400px) translateZ(3px);
+    -ms-transform: translateY(-400px) translateZ(3px);
+    transform: translateY(-400px) translateZ(3px);
+  }
 
-	img {
-		max-width: 100% !important;
-	}
+  100% {
+    -webkit-transform: translateY(0px) translateZ(3px);
+    -moz-transform: translateY(0px) translateZ(3px);
+    -o-transform: translateY(0px) translateZ(3px);
+    -ms-transform: translateY(0px) translateZ(3px);
+    transform: translateY(0px) translateZ(3px);
+  }
+}
+@-ms-keyframes remove-card {
+  0% {
+    -webkit-transform: translateY(0px) translateZ(1px);
+    -moz-transform: translateY(0px) translateZ(1px);
+    -o-transform: translateY(0px) translateZ(1px);
+    -ms-transform: translateY(0px) translateZ(1px);
+    transform: translateY(0px) translateZ(1px);
+  }
 
-	@page {
-		margin: 0.5cm;
-	}
+  33% {
+    -webkit-transform: translateY(-400px) translateZ(1px);
+    -moz-transform: translateY(-400px) translateZ(1px);
+    -o-transform: translateY(-400px) translateZ(1px);
+    -ms-transform: translateY(-400px) translateZ(1px);
+    transform: translateY(-400px) translateZ(1px);
+  }
 
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
+  67% {
+    -webkit-transform: translateY(-400px) translateZ(3px);
+    -moz-transform: translateY(-400px) translateZ(3px);
+    -o-transform: translateY(-400px) translateZ(3px);
+    -ms-transform: translateY(-400px) translateZ(3px);
+    transform: translateY(-400px) translateZ(3px);
+  }
 
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
+  100% {
+    -webkit-transform: translateY(0px) translateZ(3px);
+    -moz-transform: translateY(0px) translateZ(3px);
+    -o-transform: translateY(0px) translateZ(3px);
+    -ms-transform: translateY(0px) translateZ(3px);
+    transform: translateY(0px) translateZ(3px);
+  }
+}
+@keyframes remove-card {
+  0% {
+    -webkit-transform: translateY(0px) translateZ(1px);
+    -moz-transform: translateY(0px) translateZ(1px);
+    -o-transform: translateY(0px) translateZ(1px);
+    -ms-transform: translateY(0px) translateZ(1px);
+    transform: translateY(0px) translateZ(1px);
+  }
+
+  33% {
+    -webkit-transform: translateY(-400px) translateZ(1px);
+    -moz-transform: translateY(-400px) translateZ(1px);
+    -o-transform: translateY(-400px) translateZ(1px);
+    -ms-transform: translateY(-400px) translateZ(1px);
+    transform: translateY(-400px) translateZ(1px);
+  }
+
+  67% {
+    -webkit-transform: translateY(-400px) translateZ(3px);
+    -moz-transform: translateY(-400px) translateZ(3px);
+    -o-transform: translateY(-400px) translateZ(3px);
+    -ms-transform: translateY(-400px) translateZ(3px);
+    transform: translateY(-400px) translateZ(3px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px) translateZ(3px);
+    -moz-transform: translateY(0px) translateZ(3px);
+    -o-transform: translateY(0px) translateZ(3px);
+    -ms-transform: translateY(0px) translateZ(3px);
+    transform: translateY(0px) translateZ(3px);
+  }
 }
