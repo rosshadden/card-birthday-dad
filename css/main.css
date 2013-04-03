@@ -93,7 +93,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body{
+    background: #696;
+}
 
+header{
+    text-align: center;
+}
 
 
 
