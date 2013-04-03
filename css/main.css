@@ -101,7 +101,15 @@ header{
     text-align: center;
 }
 
+#content figure{
+    cursor: move;
+}
 
+#cake{
+    width: 372px;
+    height: 342px;
+    background: url(../img/cake.jpg);
+}
 
 
 
