@@ -110,11 +110,11 @@ header{
 	cursor: move;
 }
 
-#cake{
+/*#cake{
 	width: 372px;
 	height: 342px;
 	background: url(../img/cake.jpg);
-}
+}*/
 
 
 
@@ -225,7 +225,7 @@ header{
 
 #card.removed{
 	-webkit-animation-name: remove-card;
-	-webkit-animation-duration: 3s;
+	-webkit-animation-duration: 1.5s;
 	-webkit-animation-timing-function: ease;
 	-webkit-animation-iteration-count: 1;
 	-webkit-animation-direction: normal;
